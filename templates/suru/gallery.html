@@ -1,0 +1,32 @@
+{% extends 'suru/base.html' %}
+{% block galleryactive %} active {% endblock galleryactive %}
+{% load static %}
+{% block content%}
+
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
+  <link rel="stylesheet" href= "{% static 'css/gallery.css' %}" >
+</head>
+<body>
+<p class="heading">Our Gallery</p>
+  <div class="gallery-image">
+      {% for results in imggal %}
+    <div class="img-box">
+        <a href="{{results.image.url}}" target="_blank"> </a>
+      <img src="{{results.image.url}}" alt="{{results.imgtitle}}" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>{{results.imgtitle}}</p>
+          <p class="opacity-low">{{results.imgdesc}}</p>
+        </div>
+      </div>
+    </div>
+        {% endfor %}
+    </div>
+
+
+
+
+{%endblock%}
+

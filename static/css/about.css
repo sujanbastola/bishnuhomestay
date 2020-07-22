@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    color: #222222;
+    font-size: 1em;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  img {
+      width: 100%;
+      height: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .content-width {
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+  }
+  
+  .light-font > p {
+      /* Typography Declarations */
+      font-weight: 300;
+      letter-spacing: 0.05em;
+  }
+  
+  .masthead {
+    padding: 6em 0;
+    background-image: url('https://s3.amazonaws.com/tpf-media/coffee-cup-sm.jpg');
+    background-size: cover;
+    background-repeat: none;
+    border-top: 1em solid #8a3f20;
+    min-height: 250px;
+  }
+  
+  .masthead-intro {
+    margin-bottom: 0.1em;
+    font-family: "Gentium Book Basic", Georgia, serif;
+    font-size: 2em;
+    color: #fff;
+  }
+  
+  .masthead-heading {
+    margin-top: -0.2em;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size: 6em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 6px 5px 3px rgba(37, 14, 6, 0.8);
+  }
+  
+  .questions > h2 {
+    margin: 2em 0 1em 0;
+      /* Typography Declarations */
+      font-family: "Gentium Book Basic", Georgia, serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #8a3f20;
+  }
+  
+  .content-footer {
+    background-color: #250e06;
+    margin-top: 5em;
+    padding: 5em 0;
+  }
+  
+  .content-footer > p {
+    color: #ffffff;
+  }
+  
+  .content-footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #8a3f20;
+    margin-top: 5em;
+      padding: 4em 0;
+  }
+  
+  .social > li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  
+  .social {
+      /* Layout Declarations */
+      padding: 0;
+      /* Appearance Declarations */
+      list-style: none;
+  }
+  
+  @media only screen and (max-width: 500px) {
+      .masthead {
+          padding: 3em 0;
+      }
+      .masthead-heading {
+          font-size: 3em;
+      }
+    .content-width {
+      padding: 0 15px;
+    }
+  }

@@ -1,0 +1,36 @@
+{% extends 'suru/base.html' %}
+
+{% block contactactive %} active {% endblock contactactive %}
+{% block content %}
+
+<div class="container">
+    <h1>contact  us</h1>
+<form method="post" action="/contact">
+    {% csrf_token %}
+       <div class="form-group">
+    <label for="name">Your Name </label>
+    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+  </div>
+<div class="form-group">
+    <label for="phone">Phone Number </label>
+    <input type="number" class="form-control" id="phone" name="phone">
+  </div>
+  <div class="form-group">
+    <label class="content">Your issue:</label>
+      <textarea class="form-control"name="content"id="content"  cols="30" rows="5"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+<div class="container py-4">
+	<div class="row">
+        <iframe class="well well-sm col-xs-13 col-sm-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.484591756416!2d83.95053301478083!3d28.22296778258108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39959520dda54ba1%3A0x493a9665aa5aff63!2sBishnu%20Homestay%2CSedi%20Village-18%2C%20Pokhara!5e0!3m2!1sen!2sjp!4v1582874430947!5m2!1sen!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+</div>
+{% endblock %}

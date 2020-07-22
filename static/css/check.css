@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+*{
+
+  font-family: 'Ubuntu', sans-serif;
+  resize: none;
+}
+
+.carousel .item {
+  height: 500px;
+}
+
+.item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+
+.contact-us{
+  background: #fff;
+  padding: 50px;
+  margin: 30px auto;
+  border-radius: 30px;
+  position: relative;
+}
+
+.title h1{
+  color: #535274;
+  letter-spacing: 5px;
+  margin-bottom: 25px;
+}
+
+.form,
+.form-items{
+  width: 100%;
+}
+
+.form-items .input{
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 15px 40px;
+  box-sizing: border-box;
+  background: #ebeef1;
+  border: 0px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.form-items .input.message{
+  height: 125px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 15px 15px;
+}
+
+.btn{
+ 
+  cursor: pointer;
+}
+
+.btn .fas{
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.form-items{
+  position: relative;
+}
+
+.form-items .fas{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #9a99aa;
+}

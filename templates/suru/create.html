@@ -1,0 +1,15 @@
+{% extends 'suru/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<body>
+  <h1>Welcome to the post {{ form_type }}</h1>
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">{{ form_type }} post</button>
+</form>
+</body>
+{% endblock %}
+
+
+
