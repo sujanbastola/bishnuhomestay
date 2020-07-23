@@ -12,33 +12,23 @@ from gallery.models import imggal
 # blog arange
 def login(request):
     allPosts = Post.objects.order_by('-timeStamp')[:2]
-    allimggal = imggal.objects.order_by('-timeStamp')[:2]
+    allimggal = imggal.objects.order_by('-timeStamp')[:3]
+    allhomepic = carusel.objects.all()
     context = {
         'allPosts': allPosts,
         'allimggal': allimggal,
+        'allgomepic': allhomepic,
     }
     return render(request, 'suru/login1.html', context)
 
 
 
-
-
-
-# def login(request):
-#     allPosts = Post.objects.order_by('-timeStamp')[:2]
-#     context = {'allPosts': allPosts}
-#     return render(request, 'suru/login1.html', context)
 # for gallery
-def arangegal(request):
-    allimggal = imggal.objects.order_by('-timeStamp')[:2]
-    context = {'allimggal': allimggal}
-    return render(request, 'suru/login1.html', context)
+# def arangegal(request):
+#     allimggal = imggal.objects.order_by('-timeStamp')[:2]
+#     context = {'allimggal': allimggal}
+#     return render(request, 'suru/login1.html', context)
 
-
-# for carusel img
-# def carusel(request):
-#     caruseldisplay = carusel.objects.all()
-#     return render(request, 'suru/login1.html', {'carusel': caruseldisplay})
 
 def blogpost(request, slug):
     post = Post.objects.filter(slug=slug)

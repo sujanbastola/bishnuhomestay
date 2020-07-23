@@ -18,33 +18,21 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner " >
+         {% for results in allcarusel %}
+
     <div class="carousel-item active ">
-      <img src="{% static 'img/stupppa.jpeg' %}" class=" w-100 " alt="...">
+      <img src="{{results.image.url}}" class=" w-100 " alt="...">
       <div class="carousel-caption d-none d-md-block">
         <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">
     <h3>Check availibility</h3>
 </button>
 
-         <h1>Bishnu Homestay</h1>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h1>{{results.imgtitle}</h1>
+        <p>{{results.imgdesc</p>
       </div>
+      {% endfor %}
     </div>
-    <div class="carousel-item  ">
-      <img src="{% static 'img/fewa1.jpeg' %}" class=" w-100 " alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1>Bishnu Homestay</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-    <div class="carousel-item ">
-      <img src="{% static 'img/fewa.jpeg' %}" class=" w-100 " alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1>Bishnu Homestay</h1>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
-  </div>
   <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -155,7 +143,7 @@
 </div>
 
 <!--img area-->
-<div class="container">
+<p class="heading">Our Gallery</p>
   <div class="gallery-image">
       {% for results in allimggal %}
     <div class="img-box">
@@ -170,10 +158,11 @@
     </div>
         {% endfor %}
     </div>
-</div>
+
 
 
 <!--blog area-->
+<p class="heading">Our Blogs</p>
 {% for post in allPosts %}
 <div class="container">
    <div class="col-md-13 mt-3">

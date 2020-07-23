@@ -17,4 +17,6 @@ class carusel(models.Model):
     imgtitle =models.CharField(max_length=100)
     imgdesc = models.CharField(max_length=400)
     image = models.ImageField(upload_to='image/')
+    timeStamp = models.DateTimeField(blank=True, null=True)
+
 
