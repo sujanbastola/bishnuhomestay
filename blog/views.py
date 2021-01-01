@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from .models import Post
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 
 # Create your views here.
@@ -8,7 +10,20 @@ from .models import Post
 
 def blog(request):
     allPosts = Post.objects.all()
-    context = {'allPosts': allPosts}
+    paginator = Paginator(allPosts,4)
+    page =request.GET.get('page')
+    try:
+        allPosts = paginator.page(page)
+    except PageNotAnInteger:
+        allPosts = paginator.page(1)
+    except EmptyPage:
+        allPosts = paginator.page(paginator.num_pages)
+
+    context = {'allPosts': allPosts,
+               'page': page,
+
+               }
+
     return render(request, 'suru/blog.html', context)
 
 

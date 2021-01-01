@@ -1,0 +1,31 @@
+.container{
+    margin-top:20px;
+    background:#5f2f2;
+    border-radius: 10px;
+    height: 332px;
+    padding: 10px;
+    
+}
+.newroom{
+    text-align: center;
+    background: green;
+    width: 90px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.col-md-7 h2{
+    color: #555;
+
+}
+.stars{
+    height: 15px;
+}
+.price{
+    color: ##d88aff;
+    font-size: 27px;
+    font-weight: bold;
+    padding-top:20px;
+}
+

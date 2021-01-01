@@ -39,9 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'paypal.standard.ipn',
+    # allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # providers
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
     'login',
     'blog',
     'gallery',
+    'Rooms',
+
 
 ]
 
@@ -131,6 +142,8 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 
@@ -143,4 +156,21 @@ MESSAGE_TAGS = {
     messages.INFO: '',
     messages.ERROR: 'danger'
 }
+AUTHENTICATION_BACKEND = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+SITE_ID = 1
 
+PAYPAL_RECEIVER_EMAIL = 'bastolasujan202@gmail.com'#add paypal business  account
+PAYPAL_TEST = True
+
+SENDGRID_API_KEY = os.getenv('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') #('API key from sendgrid')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'bishnu homestay'
+EMAIL_HOST_PASSWORD = 'ronaldosujan07ronaldosujan07'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'example202@gmail.com'
+
+LOGIN_REDIRECT_URL = "/",

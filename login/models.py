@@ -19,4 +19,7 @@ class carusel(models.Model):
     image = models.ImageField(upload_to='image/')
     timeStamp = models.DateTimeField(blank=True, null=True)
 
+    def __str__(self):
+        return 'PHOTO of  ' + self.imgtitle
+
 

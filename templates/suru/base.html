@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -6,30 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Bishnu homestay</title>
       <style>
 
-footer{
-	position: fixed;
-	bottom: 0;
-}
+
 
 @media (max-height:800px){
 	footer { position: static; }
 	header { padding-top:40px; }
 }
-
+footer{
+     bottom:0;
+    position: relative;
+}
 
 .footer-distributed{
+
+    margin-top: -100px;
+     clear: both;
 	background-color: #212529;
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
 	padding: 50px 50px 60px 50px;
-	margin-top: 80px;
+	margin-top: 100px;
 }
 
 .footer-distributed .footer-left,
@@ -213,8 +219,8 @@ footer{
       <li class="nav-item {% block aboutactive %} {% endblock aboutactive %}">
         <a class="nav-link" href="/about ">About</a>
       </li>
-         <li class="nav-item {% block bookactive %} {% endblock bookactive %}">
-        <a class="nav-link " href="/book">Book</a>
+         <li class="nav-item {% block roomactive %} {% endblock roomactive %}">
+        <a class="nav-link " href="/room/">Rooms</a>
       </li>
       <li class="nav-item {% block contactactive %} {% endblock contactactive %}">
         <a class="nav-link " href="/contact">Contact</a>
@@ -299,7 +305,7 @@ footer{
     <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm your password" required>
   </div>
 {% csrf_token %}
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary mt-2">Submit</button>
 
 </form>
       </div>
@@ -308,16 +314,6 @@ footer{
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
   <!--login  Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -330,26 +326,26 @@ footer{
         </button>
       </div>
       <div class="modal-body">
-<form method="post" action="/login">
-    {% csrf_token %}
-  <div class="form-group">
-    <label for="loginusername">Username</label>
-    <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Enter your  Username">
-  </div>
+    <form method="post" action="/login">
+        {% csrf_token %}
+             <div class="form-group">
+                 <label for="loginusername">Username</label>
+                    <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Enter your  Username">
+             </div>
       <div class="form-group">
-    <label for="loginpassword">Password</label>
-    <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter your password">
-    </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-
+                <label for="loginpassword">Password</label>
+                <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter your password">
+     </div>
+ <button type="submit" class="btn btn-primary my-2">Submit</button>
 </form>
+
       </div>
       <div class="modal-footer">
       </div>
     </div>
   </div>
 </div>
+
 
 
 

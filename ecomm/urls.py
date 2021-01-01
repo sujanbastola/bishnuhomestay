@@ -21,10 +21,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('account/', include('allauth.urls')),
     path('', include('login.urls')),
+    path('paypal/', include('paypal.standard.ipn.urls')),
     path('blog/', include('blog.urls')),
     path('gallery/', include('gallery.urls')),
+    path('room/', include('Rooms.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
